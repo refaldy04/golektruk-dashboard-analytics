@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { registerInput } from "../data";
-import { RegisterType } from "../type";
+import { registerInput } from "../../data";
+import { RegisterType } from "../../type";
 import { useRouter } from "next/navigation";
 
 const Register = () => {
@@ -27,7 +27,6 @@ const Register = () => {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setErrMsg("");
-    console.log(form);
 
     if (
       !form.email ||
@@ -102,8 +101,11 @@ const Register = () => {
         body: formData,
       };
 
-      await fetch(endpoint, options);
-      setForm({ ...form, photos: [fileInput.files[0].name] });
+      const uuid = await fetch(endpoint, options);
+      const { data } = await uuid.json();
+      console.log(data);
+
+      setForm({ ...form, photos: [data] });
       setIsLoading(false);
     }
   };

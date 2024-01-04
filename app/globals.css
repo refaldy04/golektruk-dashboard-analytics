@@ -20,3 +20,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: darkslateblue;
 }
+
+.css-nijjl8 > input {
+  color: white !important;
+}

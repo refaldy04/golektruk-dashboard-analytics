@@ -30,3 +30,18 @@ export const registerInput = [
     type: "number",
   },
 ];
+
+export const loginInput = [
+  {
+    name: "username",
+    label: "Email",
+    placeholder: "email",
+    type: "email",
+  },
+  {
+    name: "password",
+    label: "Password",
+    placeholder: "password",
+    type: "password",
+  },
+];

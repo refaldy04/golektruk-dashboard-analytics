@@ -6,3 +6,8 @@ export type RegisterType = {
   age?: number;
   photos?: string[];
 };
+
+export type LoginType = {
+  username?: string;
+  password?: string;
+};
