@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { loginInput } from "../../data";
 import { LoginType } from "../../type";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const LoginPage = () => {
   const [form, setForm] = useState<LoginType>({});
@@ -48,8 +49,7 @@ const LoginPage = () => {
         setErrMsg("Something went wrong");
         return;
       } else {
-        localStorage.setItem("token", finalData.data.access_token);
-        router.push("/");
+        router.push("/home");
       }
     } catch (error) {
       console.log("client error", error);
@@ -79,6 +79,10 @@ const LoginPage = () => {
               />
             </div>
           ))}
+
+          <Link href={"/register"} className="text-white">
+            Register?
+          </Link>
 
           <button
             type="submit"

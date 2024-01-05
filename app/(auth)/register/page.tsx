@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { registerInput } from "../../data";
 import { RegisterType } from "../../type";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Register = () => {
   const [form, setForm] = useState<RegisterType>({});
@@ -169,6 +170,10 @@ const Register = () => {
               />
             </>
           )}
+
+          <Link href={"/login"} className="text-white">
+            Alredy have account?
+          </Link>
 
           <button
             type="submit"
